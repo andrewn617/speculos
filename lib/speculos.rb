@@ -3,6 +3,4 @@
 require_relative "speculos/version"
 
 module Speculos
-  class Error < StandardError; end
-  # Your code goes here...
 end
