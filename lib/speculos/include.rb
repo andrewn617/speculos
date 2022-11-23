@@ -1,5 +1,9 @@
+require_relative "matcher"
+
 module Speculos
-  class Include
+  class Include < Matcher
+    register_matcher_methods :include
+
     def initialize(expected)
       @expected = expected
     end
