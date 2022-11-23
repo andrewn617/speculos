@@ -1,5 +1,6 @@
 require_relative "expectation"
 require_relative "equal"
+require_relative "include"
 
 module Speculos
   class Example
@@ -33,6 +34,10 @@ module Speculos
 
     def equal(expected)
       Speculos::Equal.new(expected)
+    end
+
+    def include(expected)
+      Speculos::Include.new(expected)
     end
   end
 end

@@ -10,13 +10,9 @@ Speculos.describe "Example Spec" do
   end
 
   it "does something more complicated" do
-    array_1 = [1, 2, 3]
-    array_2 = [1, 2]
-    array_3 = [3]
+    array = [1, 2, 3]
 
-    array_4 = array_2 + array_3
-
-    expect(array_4).to equal(array_1)
+    expect(array).to include(1)
   end
 
   it "can have two expectations" do
