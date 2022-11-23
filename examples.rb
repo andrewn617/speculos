@@ -18,4 +18,9 @@ Speculos.describe "Example Spec" do
 
     expect(array_4).to equal(array_1)
   end
+
+  it "can have two expectations" do
+    expect(0).to equal(0)
+    expect(100).to equal(100)
+  end
 end

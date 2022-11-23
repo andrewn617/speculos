@@ -26,10 +26,7 @@ module Speculos
     end
 
     def it(description, &definition)
-      example = Speculos::Example.new(description)
-      example.define(&definition)
-
-      @examples << example
+      @examples << Speculos::Example.new(description, definition)
     end
   end
 end

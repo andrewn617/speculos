@@ -5,16 +5,15 @@ module Speculos
   class Example
     attr_reader :description, :expectations
 
-    def initialize(description)
+    def initialize(description, definition)
       @description = description
+      @definition = definition
       @expectations = []
     end
 
-    def define(&definition)
-      define_singleton_method(:run, &definition)
+    def run
+      instance_exec(&@definition)
     end
-
-    def run; end
 
     def passed?
       @expectations.all?(&:passed?)
