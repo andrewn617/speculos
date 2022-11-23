@@ -8,6 +8,16 @@ module Speculos
       @matcher = matcher
     end
 
+    def not
+      define_singleton_method(:passed?) do
+        return true unless @matcher
+
+        !@matcher.match?(@actual)
+      end
+
+      self
+    end
+
     def passed?
       return true unless @matcher
 

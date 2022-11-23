@@ -14,4 +14,11 @@ RSpec.describe Speculos::Expectation do
 
     expect(expectation).to be_passed
   end
+
+  it "fails given a negative match" do
+    expectation = Speculos::Expectation.new(1)
+    expectation.not.to(Speculos::Equal.new(1))
+
+    expect(expectation).to be_failed
+  end
 end
